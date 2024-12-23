@@ -30,6 +30,14 @@ typedef enum {
     LogLevel_FATAL,
 } LogLevel;
 
+typedef enum {
+	LogDecorate_Time = 1,
+	LogDecorate_Date = 2,
+	LogDecorate_ThreadId = 2<<1 ,
+	LogDecorate_FileName = 2<<2 ,
+	LogDecorate_LogLevel = 2<<3 ,
+}
+LogDecorate ;
 /**
  * Initialize the logger as a console logger.
  * If the file pointer is NULL, stdout will be used.
@@ -109,6 +117,11 @@ void logger_flush(void);
  * @param[in] ... Additional arguments
  */
 void logger_log(LogLevel level, const char* file, int line, const char* fmt, ...);
+
+/** setdecoreate for logger 
+ * examle LogDecorate_Time | LogDecorate_LogLevel
+ */
+void logger_setdecorate(int flag);
 
 #ifdef __cplusplus
 } /* extern "C" */

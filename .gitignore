@@ -34,3 +34,12 @@
 # Project
 build/
 build_debug/
+
+
+# amneiht
+.autotools
+.cproject
+.externalToolBuilders/
+.project
+.settings/
+Build (GNU)/
